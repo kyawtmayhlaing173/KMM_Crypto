@@ -13,39 +13,43 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.KeyboardArrowRight
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.outlined.Info
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.pinky.kmm_crypto.coin.CoinRow
 import com.pinky.kmm_crypto.coin.CoinViewModel
+import com.pinky.kmm_crypto.market.MarketDataViewModel
 import com.pinky.kmm_crypto.coin.SearchTextField
 import com.pinky.kmm_crypto.coin.SortOptions
+import com.pinky.kmm_crypto.market.HomeStatView
 import org.koin.androidx.compose.koinViewModel
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun CryptoApp() {
-    val viewModel = koinViewModel<CoinViewModel>()
-    val uiState = viewModel.uiState
+    val coinViewModel = koinViewModel<CoinViewModel>()
+    val marketViewModel = koinViewModel<MarketDataViewModel>()
+    val uiState = coinViewModel.uiState
 
     Scaffold(
         contentWindowInsets = WindowInsets.systemBars
@@ -54,6 +58,53 @@ fun CryptoApp() {
             .fillMaxSize()
             .padding(paddingValues = padding)
         ) {
+            Row(
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            ) {
+                Surface(
+                    modifier = Modifier.size(50.dp),
+                    shape = CircleShape,
+                    shadowElevation = 4.dp
+                ) {
+                    Box(contentAlignment = Alignment.Center) {
+                        Icon(
+                            imageVector = Icons.Outlined.Info,
+                            contentDescription = "Info Icon",
+                            modifier = Modifier.size(30.dp)
+                        )
+                    }
+                }
+                Spacer(modifier = Modifier.weight(1f))
+                Text(
+                    text = "Live Prices",
+                    style = TextStyle(
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Bold,
+
+                    )
+                )
+                Spacer(modifier = Modifier.weight(1f))
+                Surface(
+                    modifier = Modifier.size(50.dp),
+                    shape = CircleShape,
+                    shadowElevation = 4.dp
+                ) {
+                    Box(contentAlignment = Alignment.Center) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Outlined.KeyboardArrowRight,
+                            contentDescription = "Chevron Right",
+                            modifier = Modifier.size(30.dp)
+                        )
+                    }
+                }
+            }
+
+            HomeStatView(viewModel = marketViewModel)
+
             if (uiState.loading) {
                 Row(
                     modifier = Modifier
@@ -67,8 +118,8 @@ fun CryptoApp() {
             } else {
                 SearchTextField(
                     text = uiState.searchText,
-                    onTextChange = viewModel::onSearchTextChange,
-                    onCloseClick = viewModel::onCloseClick
+                    onTextChange = coinViewModel::onSearchTextChange,
+                    onCloseClick = coinViewModel::onCloseClick
                 )
                 Column {
                     Row(
@@ -86,7 +137,7 @@ fun CryptoApp() {
                             modifier = Modifier
                                 .size(16.dp)
                                 .clickable {
-                                    viewModel.onSortClick(
+                                    coinViewModel.onSortClick(
                                         when (uiState.sortOption) {
                                             SortOptions.Rank -> SortOptions.RankReversed
                                             SortOptions.RankReversed -> SortOptions.Rank
@@ -116,7 +167,7 @@ fun CryptoApp() {
                             modifier = Modifier
                                 .size(16.dp)
                                 .clickable {
-                                    viewModel.onSortClick(
+                                    coinViewModel.onSortClick(
                                         when (uiState.sortOption) {
                                             SortOptions.Price -> SortOptions.PriceReversed
                                             SortOptions.PriceReversed -> SortOptions.Price
@@ -137,6 +188,11 @@ fun CryptoApp() {
             }
         }
     }
+}
+
+@Composable
+fun CoinHeader() {
+
 }
 
 @Preview

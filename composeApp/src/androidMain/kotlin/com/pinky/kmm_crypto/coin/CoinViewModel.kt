@@ -3,12 +3,10 @@ package com.pinky.kmm_crypto.coin
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.pinky.kmm_crypto.data.remote.CoinModel
 import com.pinky.kmm_crypto.domain.usecase.GetCoinsUseCase
-import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 
 enum class SortOptions {

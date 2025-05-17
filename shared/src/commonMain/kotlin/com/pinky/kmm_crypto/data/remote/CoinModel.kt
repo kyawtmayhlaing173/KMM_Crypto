@@ -52,8 +52,17 @@ data class CoinModel(
     @SerialName("sparkline_in_7d")
     val sparklineIn7D: SparklineIn7D?,
     @SerialName("price_change_percentage_24h_in_currency")
-    val priceChangePercentage24HInCurrency: Double?
-)
+    val priceChangePercentage24HInCurrency: Double?,
+    @SerialName("current_holdings")
+    val currentHoldings: Double? = null
+
+) {
+    val currentHoldingsValue: Double
+        get() = (currentHoldings ?: 0.0) * currentPrice
+
+    val rank: Int
+        get() = (marketCap ?: 0).toInt()
+}
 
 @Serializable
 data class SparklineIn7D(
