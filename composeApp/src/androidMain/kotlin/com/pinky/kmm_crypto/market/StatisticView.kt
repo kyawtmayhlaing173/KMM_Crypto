@@ -23,19 +23,19 @@ import com.pinky.kmm_crypto.utility.formatWithAbbreviations
 
 @Composable
 fun StatisticView(
-    stat: StatisticModel
+    stat: StatisticModel,
 ) {
     Column {
         Text(
             stat.title,
             style = TextStyle(
                 fontSize = 14.sp,
-                color = Color.LightGray,
+                color = Color.Gray,
             )
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
-            stat.value.formatWithAbbreviations(),
+            stat.value,
             style = TextStyle(
                 fontSize = 18.sp,
                 color = Color.Black,

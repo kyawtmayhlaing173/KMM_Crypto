@@ -9,6 +9,8 @@ import com.pinky.kmm_crypto.data.remote.CoinModel
 import com.pinky.kmm_crypto.data.remote.MarketDataModel
 import com.pinky.kmm_crypto.domain.usecase.GetMarketDataUseCase
 import com.pinky.kmm_crypto.model.StatisticModel
+import com.pinky.kmm_crypto.toCurrencyFormat
+import com.pinky.kmm_crypto.utility.formatWithAbbreviations
 import kotlinx.coroutines.launch
 
 class MarketDataViewModel(
@@ -38,9 +40,9 @@ class MarketDataViewModel(
         var stats by mutableStateOf(emptyList<StatisticModel>())
         val data = marketDataModel ?: return stats
 
-        val marketCap = StatisticModel(title = "Market Cap", value = data.marketCap, percentageChange = data.marketCapChangePercentage24hUsd)
-        val volume = StatisticModel(title = "24h Volume", value = data.volume, percentageChange = null)
-        val btcDominance = StatisticModel(title = "BTC Dominance", value = data.btcDominance, percentageChange = null)
+        val marketCap = StatisticModel(title = "Market Cap", value = data.marketCap.formatWithAbbreviations(), percentageChange = data.marketCapChangePercentage24hUsd)
+        val volume = StatisticModel(title = "24h Volume", value = data.volume.formatWithAbbreviations(), percentageChange = null)
+        val btcDominance = StatisticModel(title = "BTC Dominance", value = "${data.btcDominance.formatWithAbbreviations()}%", percentageChange = null)
 
         val portfolioValue = portfolioCoins.sumOf { it.currentHoldingsValue ?: 0.0 }
         val previousValue = portfolioCoins.sumOf {
@@ -51,7 +53,7 @@ class MarketDataViewModel(
         }
 
         val percentageChange = (portfolioValue - previousValue) / previousValue
-        val portfolio = StatisticModel(title = "Portfolio Value", value = portfolioValue, percentageChange)
+        val portfolio = StatisticModel(title = "Portfolio Value", value = portfolioValue.toCurrencyFormat(), percentageChange)
 
         stats = listOf(
             marketCap,
