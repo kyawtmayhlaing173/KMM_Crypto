@@ -7,7 +7,7 @@ import io.ktor.http.takeFrom
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
-private const val BASE_URL = "https://api.coingecko.com/api/v3"
+public const val BASE_URL = "https://api.coingecko.com/api/v3"
 
 internal abstract class KtorApi {
     val client = HttpClient {
@@ -19,9 +19,4 @@ internal abstract class KtorApi {
         }
     }
 
-    fun HttpRequestBuilder.pathURL(path: String) {
-        url {
-            takeFrom("$BASE_URL/$path")
-        }
-    }
 }

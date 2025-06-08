@@ -10,7 +10,7 @@ data class CoinModel(
     val name: String,
     val image: String,
     @SerialName("current_price")
-    val currentPrice: Double,
+    val currentPrice: Double? = 0.0,
     @SerialName("market_cap")
     val marketCap: Double?,
     @SerialName("market_cap_rank")
@@ -58,7 +58,7 @@ data class CoinModel(
 
 ) {
     val currentHoldingsValue: Double
-        get() = (currentHoldings ?: 0.0) * currentPrice
+        get() = (currentHoldings ?: 0.0) * (currentPrice ?: 0.0)
 
     val rank: Int
         get() = (marketCap ?: 0).toInt()
