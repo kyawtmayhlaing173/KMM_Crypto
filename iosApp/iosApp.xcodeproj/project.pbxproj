@@ -3,13 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557BA273AAA24004C7B11 /* Assets.xcassets */; };
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
+		5579E3502DF5949600B766B3 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579E34C2DF5949600B766B3 /* UIApplication.swift */; };
+		5579E3512DF5949600B766B3 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579E34A2DF5949600B766B3 /* Double.swift */; };
+		5579E3522DF5949600B766B3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579E34E2DF5949600B766B3 /* String.swift */; };
+		5579E3532DF5949600B766B3 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579E34D2DF5949600B766B3 /* Date.swift */; };
+		5579E3542DF5949600B766B3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579E3492DF5949600B766B3 /* Color.swift */; };
+		5579E3552DF5949600B766B3 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579E34B2DF5949600B766B3 /* PreviewProvider.swift */; };
+		5579E3662DF5963700B766B3 /* PortfolioContainer.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 5579E3632DF5963700B766B3 /* PortfolioContainer.xcdatamodeld */; };
+		5579E37B2DF5E19B00B766B3 /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579E3782DF5E19B00B766B3 /* LocalFileManager.swift */; };
+		5579E37C2DF5E19B00B766B3 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579E3792DF5E19B00B766B3 /* HapticManager.swift */; };
+		5579E37D2DF5E19B00B766B3 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579E3772DF5E19B00B766B3 /* NetworkingManager.swift */; };
+		5579E4042DF8990A00B766B3 /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5579E4032DF8990A00B766B3 /* StatisticModel.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -17,11 +28,27 @@
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
+		5579E3492DF5949600B766B3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		5579E34A2DF5949600B766B3 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		5579E34B2DF5949600B766B3 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		5579E34C2DF5949600B766B3 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		5579E34D2DF5949600B766B3 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		5579E34E2DF5949600B766B3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		5579E3622DF5963700B766B3 /* PortfolioContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortfolioContainer.xcdatamodel; sourceTree = "<group>"; };
+		5579E3772DF5E19B00B766B3 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		5579E3782DF5E19B00B766B3 /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		5579E3792DF5E19B00B766B3 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		5579E4032DF8990A00B766B3 /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* KMM_Crypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMM_Crypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB3632DC29227652001CCB65 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		5579E3422DF593B500B766B3 /* Core */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Core; sourceTree = "<group>"; };
+		5579E36B2DF59FF500B766B3 /* Services */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Services; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B92378962B6B1156000C7307 /* Frameworks */ = {
@@ -49,6 +76,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5579E34F2DF5949600B766B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5579E3492DF5949600B766B3 /* Color.swift */,
+				5579E34A2DF5949600B766B3 /* Double.swift */,
+				5579E34B2DF5949600B766B3 /* PreviewProvider.swift */,
+				5579E34C2DF5949600B766B3 /* UIApplication.swift */,
+				5579E34D2DF5949600B766B3 /* Date.swift */,
+				5579E34E2DF5949600B766B3 /* String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5579E3652DF5963700B766B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5579E4032DF8990A00B766B3 /* StatisticModel.swift */,
+				5579E3632DF5963700B766B3 /* PortfolioContainer.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5579E37A2DF5E19B00B766B3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5579E3772DF5E19B00B766B3 /* NetworkingManager.swift */,
+				5579E3782DF5E19B00B766B3 /* LocalFileManager.swift */,
+				5579E3792DF5E19B00B766B3 /* HapticManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		7555FF72242A565900829871 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +129,11 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				5579E37A2DF5E19B00B766B3 /* Utilities */,
+				5579E36B2DF59FF500B766B3 /* Services */,
+				5579E3652DF5963700B766B3 /* Models */,
+				5579E34F2DF5949600B766B3 /* Extensions */,
+				5579E3422DF593B500B766B3 /* Core */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
@@ -102,6 +166,10 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				5579E3422DF593B500B766B3 /* Core */,
+				5579E36B2DF59FF500B766B3 /* Services */,
 			);
 			name = iosApp;
 			packageProductDependencies = (
@@ -153,6 +221,7 @@
 			files = (
 				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
 				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
+				5579E3662DF5963700B766B3 /* PortfolioContainer.xcdatamodeld in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +253,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5579E3502DF5949600B766B3 /* UIApplication.swift in Sources */,
+				5579E3512DF5949600B766B3 /* Double.swift in Sources */,
+				5579E4042DF8990A00B766B3 /* StatisticModel.swift in Sources */,
+				5579E3522DF5949600B766B3 /* String.swift in Sources */,
+				5579E3532DF5949600B766B3 /* Date.swift in Sources */,
+				5579E3542DF5949600B766B3 /* Color.swift in Sources */,
+				5579E37B2DF5E19B00B766B3 /* LocalFileManager.swift in Sources */,
+				5579E37C2DF5E19B00B766B3 /* HapticManager.swift in Sources */,
+				5579E37D2DF5E19B00B766B3 /* NetworkingManager.swift in Sources */,
+				5579E3552DF5949600B766B3 /* PreviewProvider.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 			);
@@ -388,6 +467,18 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5579E3632DF5963700B766B3 /* PortfolioContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5579E3622DF5963700B766B3 /* PortfolioContainer.xcdatamodel */,
+			);
+			currentVersion = 5579E3622DF5963700B766B3 /* PortfolioContainer.xcdatamodel */;
+			path = PortfolioContainer.xcdatamodeld;
+			sourceTree = "<group>";
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7555FF73242A565900829871 /* Project object */;
 }

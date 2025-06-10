@@ -12,3 +12,4 @@ class GetCoinsUseCase: KoinComponent {
         return repository.getCoins()
     }
 }
+
