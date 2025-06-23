@@ -1,4 +1,4 @@
-package com.pinky.kmm_crypto.settings
+package com.pinky.kmm_crypto.presentation.settings
 
 import Gray20
 import androidx.compose.foundation.background

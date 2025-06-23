@@ -20,6 +20,19 @@ val Typography.sectionSubtitle: TextStyle
         lineHeight = 24.sp
     )
 
+val Typography.paragraph: TextStyle
+    get() = TextStyle(
+        fontSize = 14.sp,
+        lineHeight = 24.sp
+    )
+
+val Typography.small: TextStyle
+    get() = TextStyle(
+        color = Color.Gray,
+        fontSize = 12.sp,
+        lineHeight = 24.sp
+    )
+
 val Typography.clickableText: TextStyle
     get() = TextStyle(
         color = Blue50,

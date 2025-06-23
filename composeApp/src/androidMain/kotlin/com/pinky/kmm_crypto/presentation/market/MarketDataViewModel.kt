@@ -1,4 +1,4 @@
-package com.pinky.kmm_crypto.market
+package com.pinky.kmm_crypto.presentation.market
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

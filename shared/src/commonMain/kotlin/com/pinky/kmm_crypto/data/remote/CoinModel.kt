@@ -54,8 +54,8 @@ data class CoinModel(
     @SerialName("price_change_percentage_24h_in_currency")
     val priceChangePercentage24HInCurrency: Double?,
     @SerialName("current_holdings")
-    val currentHoldings: Double? = null
-
+    val currentHoldings: Double? = null,
+    val amount: Double? = null
 ) {
     val currentHoldingsValue: Double
         get() = (currentHoldings ?: 0.0) * (currentPrice ?: 0.0)

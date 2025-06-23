@@ -1,4 +1,4 @@
-package com.pinky.kmm_crypto.coin
+package com.pinky.kmm_crypto.presentation.coin
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.Crossfade
@@ -48,16 +48,17 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.pinky.kmm_crypto.market.HomeStatView
-import com.pinky.kmm_crypto.market.MarketDataViewModel
-import com.pinky.kmm_crypto.market.PortfolioEmptyText
+import com.pinky.kmm_crypto.presentation.market.HomeStatView
+import com.pinky.kmm_crypto.presentation.market.MarketDataViewModel
+import com.pinky.kmm_crypto.presentation.market.PortfolioEmptyText
 
 @Composable
 fun HomeScreen(
     coinViewModel: CoinViewModel,
     marketViewModel: MarketDataViewModel,
     padding: PaddingValues,
-    navigateToSetting: () -> Unit
+    navigateToSetting: () -> Unit,
+    navigateToPortfolio: () -> Unit,
 ) {
     val uiState = coinViewModel.uiState
     var showPortfolio by remember { mutableStateOf(false) }
@@ -98,6 +99,8 @@ fun HomeScreen(
                                 .clickable {
                                     if (!targetState) {
                                         navigateToSetting()
+                                    } else {
+                                        navigateToPortfolio()
                                     }
                                 }
                         )
@@ -250,11 +253,24 @@ fun HomeScreen(
                         modifier = Modifier.padding(16.dp)
                     ) {
                         items(uiState.coins) {
-                            CoinRow(coin = it)
+                            CoinRow(coin = it, showPortfolio = showPortfolio)
                         }
                     }
                 } else {
-                    PortfolioEmptyText()
+                    if (uiState.portfolioCoins.isEmpty()) {
+                        PortfolioEmptyText()
+                    } else {
+                        LazyColumn(
+                            modifier = Modifier.padding(16.dp)
+                        ) {
+                            items(uiState.portfolioCoins) {
+                                CoinRow(
+                                    coin = it,
+                                    showPortfolio
+                                )
+                            }
+                        }
+                    }
                 }
             }
         }

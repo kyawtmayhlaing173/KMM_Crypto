@@ -1,4 +1,4 @@
-package com.pinky.kmm_crypto.market
+package com.pinky.kmm_crypto.presentation.market
 
 import android.text.Layout
 import androidx.compose.foundation.layout.Box

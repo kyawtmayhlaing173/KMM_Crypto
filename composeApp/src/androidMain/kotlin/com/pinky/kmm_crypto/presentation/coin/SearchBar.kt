@@ -1,4 +1,4 @@
-package com.pinky.kmm_crypto.coin
+package com.pinky.kmm_crypto.presentation.coin
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Box

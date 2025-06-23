@@ -23,3 +23,12 @@ object Setting: Destination {
     override val routeWithArgs: String
         get() = route
 }
+
+object Portfolio: Destination {
+    override val title: String
+        get() = "Portfolio"
+    override val route: String
+        get() = "portfolio"
+    override val routeWithArgs: String
+        get() = route
+}

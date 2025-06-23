@@ -1,4 +1,4 @@
-package com.pinky.kmm_crypto.market
+package com.pinky.kmm_crypto.presentation.market
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
